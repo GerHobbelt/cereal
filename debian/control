@@ -1,0 +1,22 @@
+Source: cereal
+Section: libdevel
+Priority: optional
+Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
+Uploaders: Michael R. Crusoe <crusoe@ucdavis.edu>
+Build-Depends: debhelper (>= 9),
+               libboost-serialization-dev,
+               libboost-test-dev
+Standards-Version: 3.9.6
+Vcs-Browser: http://anonscm.debian.org/viewvc/debian-med/trunk/packages/<pkg>/trunk/
+Vcs-Svn: svn://anonscm.debian.org/debian-med/trunk/packages/<pkg>/trunk/
+Homepage: http://uscilab.github.io/cereal/
+
+Package: libcereal-dev
+Architecture: any
+Depends: ${misc:Depends}
+Description: C++11 library for serialization
+ cereal is a header-only C++11 serialization library. cereal takes arbitrary
+ data types and reversibly turns them into different representations, such as
+ compact binary encodings, XML, or JSON. cereal was designed to be fast,
+ light-weight, and easy to extend - it has no external dependencies and can be
+ easily bundled with other code or used standalone.

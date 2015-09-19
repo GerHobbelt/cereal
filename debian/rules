@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+# DH_VERBOSE := 1
+
+# some helpful variables - uncomment them if needed
+# shamelessly stolen from http://jmtd.net/log/awk/
+#DEBVERS        := $(shell dpkg-parsechangelog | awk '/^Version:/ {print $$2}')
+#VERSION        := $(shell echo '$(DEBVERS)' | sed -e 's/^[0-9]*://' -e 's/-.*//')
+#DEBFLAVOR      := $(shell dpkg-parsechangelog | awk '/^Distribution:/ {print $$2}')
+#DEBPKGNAME     := $(shell dpkg-parsechangelog | awk '/^Source:/ {print $$2}')
+#DEBIAN_BRANCH  := $(shell awk 'BEGIN{FS="[= ]+"} /debian-branch/ {print $$2}' debian/gbp.conf)
+#GIT_TAG        := $(subst ~,_,$(VERSION))
+
+# alternatively to manually set those variables, you can
+#  include /usr/share/dpkg/default.mk
+# and use what is set there.
+
+%:
+	dh $@ --parallel
+
+override_dh_auto_build:
+	dh_auto_build -- all doc
