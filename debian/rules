@@ -1,6 +1,6 @@
 #!/usr/bin/make -f
 
-# DH_VERBOSE := 1
+DH_VERBOSE := 1
 
 # some helpful variables - uncomment them if needed
 # shamelessly stolen from http://jmtd.net/log/awk/
@@ -20,3 +20,6 @@
 
 override_dh_auto_build:
 	dh_auto_build -- all doc
+
+override_dh_install:
+	dh_install --exclude license

@@ -8,7 +8,7 @@ License: bsd-3-clause
 
 Files: include/cereal/external/base64.hpp
 Copyright: (C) 2004-2008 René Nyffenegger
-License: 
+License: other 
    This source code is provided 'as-is', without any express or implied
    warranty. In no event will the author be held liable for any damages
    arising from the use of this software.
@@ -31,7 +31,7 @@ License:
 
 Files: include/cereal/external/rapidjson/*
 Copyright: (C) 2011 Milo Yip
-License: 
+License: MIT 
  Permission is hereby granted, free of charge, to any person obtaining a copy
  of this software and associated documentation files (the "Software"), to deal
  in the Software without restriction, including without limitation the rights
