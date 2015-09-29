@@ -1,0 +1,2 @@
+libcereal-doc: embedded-javascript-library usr/share/doc/libcereal-dev/html/jquery.js please use libjs-jquery
+# Silenced as per /usr/share/doc/doxygen/README.jquery 
