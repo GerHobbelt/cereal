@@ -1,4 +1,4 @@
-cereal (1.1.2-1) unstable; urgency=low
+libcereal (1.1.2-1) unstable; urgency=low
 
   * Initial release (Closes: #800335)
 

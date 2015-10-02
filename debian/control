@@ -1,4 +1,4 @@
-Source: cereal
+Source: libcereal
 Section: libdevel
 Priority: optional
 Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.org>
@@ -10,8 +10,8 @@ Build-Depends: debhelper (>= 9),
                g++-multilib,
                doxygen
 Standards-Version: 3.9.6
-Vcs-Browser: http://anonscm.debian.org/cgit/debian-med/cereal.git
-Vcs-Git: git://anonscm.debian.org/debian-med/cereal.git
+Vcs-Browser: http://anonscm.debian.org/cgit/debian-med/libcereal.git
+Vcs-Git: git://anonscm.debian.org/debian-med/libcereal.git
 Homepage: http://uscilab.github.io/cereal/
 
 Package: libcereal-dev
