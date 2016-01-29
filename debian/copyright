@@ -31,7 +31,7 @@ License: other
 
 Files: include/cereal/external/rapidxml/*
 Copyright: Copyright (c) 2006, 2007, 2009 Marcin Kalicinski
-License: Boost-Software-License-1.0 or Expat
+License: BSL-1.0 or Expat
 
 Files: include/cereal/external/rapidjson/*
 Copyright: (C) 2011 Milo Yip <miloyip@gmail.com>
@@ -64,7 +64,7 @@ License: bsd-3-clause
  (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-License: Boost-Software-License-1.0
+License: BSL-1.0
  Permission is hereby granted, free of charge, to any person or organization
  obtaining a copy of the software and accompanying documentation covered by
  this license (the "Software") to use, reproduce, display, distribute,

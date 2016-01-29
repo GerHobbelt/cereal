@@ -10,8 +10,8 @@ Build-Depends: debhelper (>= 9),
                g++-multilib,
                doxygen
 Standards-Version: 3.9.6
-Vcs-Browser: http://anonscm.debian.org/cgit/debian-med/libcereal.git
-Vcs-Git: git://anonscm.debian.org/debian-med/libcereal.git
+Vcs-Browser: https://anonscm.debian.org/cgit/debian-med/libcereal.git
+Vcs-Git: https://anonscm.debian.org/debian-med/libcereal.git
 Homepage: http://uscilab.github.io/cereal/
 
 Package: libcereal-dev
