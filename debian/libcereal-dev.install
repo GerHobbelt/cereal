@@ -1,1 +1,3 @@
 include/cereal usr/include/
+CMakeLists.txt usr/share/doc/libcereal-dev/tests/
+unittests usr/share/doc/libcereal-dev/tests/
