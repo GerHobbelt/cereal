@@ -1,3 +1,6 @@
+Author: Michael R. Crusoe <crusoe@ucdavis.edu>
+Description: build just the tests, as an option for autopkgtest later
+With assistance from Kevin D. Murray; thanks!
 --- libcereal.orig/CMakeLists.txt
 +++ libcereal/CMakeLists.txt
 @@ -3,21 +3,26 @@

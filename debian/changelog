@@ -2,6 +2,8 @@ libcereal (1.1.2-2) UNRELEASED; urgency=medium
 
   * Only build for *-amd64, sparc64 until upstream fixes their code.
   (Closes: # 813280, #813281, #813282)
+  * Added autopkgtest
+  * Fix Vcs-Git URL.
 
  -- Michael R. Crusoe <crusoe@ucdavis.edu>  Sun, 31 Jan 2016 00:19:40 -0800
 
