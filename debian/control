@@ -15,7 +15,7 @@ Vcs-Git: https://anonscm.debian.org/git/debian-med/libcereal.git
 Homepage: http://uscilab.github.io/cereal/
 
 Package: libcereal-dev
-Architecture: any-amd64 any-arm64 armel armhf any-ppc64el any-s390x any-alpha any-hppa any-m68k any-mips64el any-ppc64 any-sh4 any-sparc64
+Architecture: any
 Depends: ${misc:Depends}
 Description: C++11 library for serialization
  cereal is a header-only C++11 serialization library. cereal takes arbitrary

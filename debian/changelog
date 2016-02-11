@@ -1,4 +1,10 @@
-libcereal (1.1.2-2) UNRELEASED; urgency=medium
+libcereal (1.1.2-3) UNRELEASED; urgency=medium
+
+  * Applied patch from upstream, try building on all archs again. 
+
+ -- Michael R. Crusoe <crusoe@ucdavis.edu>  Thu, 11 Feb 2016 14:04:10 -0800
+
+libcereal (1.1.2-2) unstable; urgency=medium
 
   * Only build for *-amd64, sparc64 until upstream fixes their code.
   (Closes: # 813280, #813281, #813282)
