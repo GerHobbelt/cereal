@@ -1,4 +1,4 @@
-libcereal (1.1.2-3) UNRELEASED; urgency=medium
+libcereal (1.1.2-3) unstable; urgency=medium
 
   * Applied patch from upstream, try building on all archs again. 
 
