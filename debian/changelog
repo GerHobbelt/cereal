@@ -1,4 +1,4 @@
-libcereal (1.1.2-4) UNRELEASED; urgency=medium
+libcereal (1.1.2-4) unstable; urgency=medium
 
   * Drop multilib builddeb (Closes: #814530) 
 
