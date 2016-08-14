@@ -1,3 +1,10 @@
+libcereal (1.2.1-1) unstable; urgency=medium
+
+  * New upstream release with support for g++ 6 (Closes: #834187)
+  * Drop arm compatibility patch as it was incorporated upstream
+
+ -- Michael R. Crusoe <michael.crusoe@gmail.com>  Sun, 14 Aug 2016 02:11:45 -0700
+
 libcereal (1.1.2-4) unstable; urgency=medium
 
   * Drop multilib builddeb (Closes: #814530) 
