@@ -1,0 +1,14 @@
+From: Michael R. Crusoe <michael.crusoe@gmail.com>
+Subject: Make doxygen docs reproducible
+
+--- libcereal.orig/doc/doxygen.in
++++ libcereal/doc/doxygen.in
+@@ -130,7 +130,7 @@
+ # relative paths, which will be relative from the directory where doxygen is
+ # started.
+ 
+-STRIP_FROM_PATH        =
++STRIP_FROM_PATH        = @CMAKE_CURRENT_SOURCE_DIR@
+ 
+ # The STRIP_FROM_INC_PATH tag can be used to strip a user-defined part of
+ # the path mentioned in the documentation of a class, which tells

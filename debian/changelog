@@ -1,3 +1,9 @@
+libcereal (1.2.1-2) unstable; urgency=medium
+
+  * Make Doxygen docs reproducible.
+
+ -- Michael R. Crusoe <michael.crusoe@gmail.com>  Thu, 10 Nov 2016 04:01:18 -0800
+
 libcereal (1.2.1-1) unstable; urgency=medium
 
   * New upstream release with support for g++ 6 (Closes: #834187)
