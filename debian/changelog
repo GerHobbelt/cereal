@@ -4,6 +4,7 @@ libcereal (1.2.1-3) UNRELEASED; urgency=medium
   * Do not set -Werror which makes build fail when using gcc-7
     Closes: #853486
   * debhelper 10
+  * Standards-Version: 4.1.0 (no changes needed)
 
  -- Andreas Tille <tille@debian.org>  Thu, 31 Aug 2017 23:24:39 +0200
 
