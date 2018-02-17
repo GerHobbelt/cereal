@@ -3,39 +3,37 @@ Description: build just the tests, as an option for autopkgtest later
 With assistance from Kevin D. Murray; thanks!
 --- libcereal.orig/CMakeLists.txt
 +++ libcereal/CMakeLists.txt
-@@ -14,6 +14,8 @@
-     set(CEREAL_THREAD_LIBS "")
+@@ -32,6 +32,8 @@
+     endif()
  endif()
  
 +option(ONLY_TESTS "Don't build docs, or sandbox" OFF)
 +
- if(NOT MSVC)
-     set(CMAKE_CXX_FLAGS "-Wall -Werror -g -Wextra -Wshadow -pedantic ${CMAKE_CXX_FLAGS}")
-     if(CMAKE_VERSION VERSION_LESS 3.1)
-@@ -43,19 +45,22 @@
+ if(NOT CMAKE_VERSION VERSION_LESS 3.0)
+     add_library(cereal INTERFACE)
+     target_include_directories(cereal INTERFACE
+@@ -49,18 +51,21 @@
      return()
  endif()
  
 -include_directories(./include)
--
- find_package(Boost COMPONENTS serialization unit_test_framework)
+ 
+ # Boost serialization for performance sandbox
+ find_package(Boost COMPONENTS serialization)
  
  if(Boost_FOUND)
    include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
-   enable_testing()
 +  if(NOT ONLY_TEST)
-+  	include_directories(./include)
++	  include_directories(./include)
 +  endif(NOT ONLY_TEST)
-   add_subdirectory(unittests)
  endif(Boost_FOUND)
- 
+   
+ enable_testing()
+ add_subdirectory(unittests)
+-
 -add_subdirectory(sandbox)
 +if(NOT ONLY_TEST)
-+  add_subdirectory(sandbox)
-+  find_package(Doxygen)
++	add_subdirectory(sandbox)
 +endif(NOT ONLY_TEST)
  
--find_package(Doxygen)
- if(DOXYGEN_FOUND)
- 
-   configure_file("${CMAKE_CURRENT_SOURCE_DIR}/doc/doxygen.in" "${CMAKE_CURRENT_BINARY_DIR}/doxygen.cfg" @ONLY)
+ add_subdirectory(doc)
