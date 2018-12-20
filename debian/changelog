@@ -1,3 +1,10 @@
+libcereal (1.2.2-3) UNRELEASED; urgency=medium
+
+  * Do not try to change non-existing files in binary all builds
+    Closes: #916969
+
+ -- Andreas Tille <tille@debian.org>  Thu, 20 Dec 2018 22:34:12 +0100
+
 libcereal (1.2.2-2) unstable; urgency=medium
 
   * Team upload.
