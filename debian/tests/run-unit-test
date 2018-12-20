@@ -1,0 +1,15 @@
+#!/bin/sh
+
+pkg=libcereal-dev
+
+if [ "$AUTOPKGTEST_TMP" = "" ] ; then
+  AUTOPKGTEST_TMP=`mktemp -d /tmp/${pkg}-test.XXXXXX`
+  trap "rm -rf $AUTOPKGTEST_TMP" 0 INT QUIT ABRT PIPE TERM
+fi
+
+cd $AUTOPKGTEST_TMP
+
+cp -rs /usr/share/doc/${pkg}/tests/* .
+gunzip -r *
+cmake -DONLY_TEST=on -DSKIP_PORTABILITY_TEST=on .
+make

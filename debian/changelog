@@ -3,6 +3,7 @@ libcereal (1.2.2-2) UNRELEASED; urgency=medium
   * Team upload.
   * Fix autopkgtest
     Closes: #911261
+  * Normalise autopkgtest (as in other Debian Med packages)
 
  -- Andreas Tille <tille@debian.org>  Thu, 20 Dec 2018 14:45:21 +0100
 

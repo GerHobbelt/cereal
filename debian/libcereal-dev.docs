@@ -1,1 +1,2 @@
-debian/tests/run-tests
+debian/tests/run-unit-test
+debian/README.test
