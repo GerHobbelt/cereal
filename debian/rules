@@ -11,3 +11,4 @@ override_dh_auto_build:
 
 override_dh_install:
 	dh_install --exclude license
+	sed -i '/add_subdirectory(doc)/d' debian/*/usr/share/doc/libcereal-dev/tests/CMakeLists.txt
