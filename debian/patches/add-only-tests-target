@@ -3,8 +3,8 @@ Description: build just the tests, as an option for autopkgtest later
 With assistance from Kevin D. Murray; thanks!
 --- libcereal.orig/CMakeLists.txt
 +++ libcereal/CMakeLists.txt
-@@ -32,6 +32,8 @@
-     endif()
+@@ -46,6 +46,8 @@
+ 
  endif()
  
 +option(ONLY_TESTS "Don't build docs, or sandbox" OFF)
@@ -12,21 +12,7 @@ With assistance from Kevin D. Murray; thanks!
  if(NOT CMAKE_VERSION VERSION_LESS 3.0)
      add_library(cereal INTERFACE)
      target_include_directories(cereal INTERFACE
-@@ -49,18 +51,21 @@
-     return()
- endif()
- 
--include_directories(./include)
- 
- # Boost serialization for performance sandbox
- find_package(Boost COMPONENTS serialization)
- 
- if(Boost_FOUND)
-   include_directories(SYSTEM ${Boost_INCLUDE_DIRS})
-+  if(NOT ONLY_TEST)
-+	  include_directories(./include)
-+  endif(NOT ONLY_TEST)
- endif(Boost_FOUND)
+@@ -78,7 +80,8 @@
    
  enable_testing()
  add_subdirectory(unittests)

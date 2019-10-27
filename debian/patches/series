@@ -1,4 +1,3 @@
 reproducible-doxygen
 drop-google-analytics
 add-only-tests-target
-no_-Werror.patch
