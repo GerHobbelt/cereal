@@ -14,7 +14,8 @@ Vcs-Git: https://salsa.debian.org/med-team/libcereal.git
 Homepage: http://uscilab.github.io/cereal/
 
 Package: libcereal-dev
-Architecture: any
+Multi-Arch: foreign
+Architecture: all
 Depends: ${misc:Depends}
 Description: C++11 library for serialization
  cereal is a header-only C++11 serialization library. cereal takes arbitrary
@@ -25,6 +26,7 @@ Description: C++11 library for serialization
 
 Package: libcereal-doc
 Architecture: all
+Multi-Arch: foreign
 Section: doc
 Depends: ${misc:Depends}
 Description: C++11 library for serialization HTML documentation
