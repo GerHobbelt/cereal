@@ -6,6 +6,8 @@ libcereal (1.3.0-3) UNRELEASED; urgency=medium
   * Tweak the doxygen patch to make the build reproducible
   * Standards-Version: 4.5.0 (routine-update)
   * Use secure URI in Homepage field.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
 
  -- Michael R. Crusoe <michael.crusoe@gmail.com>  Fri, 28 Feb 2020 17:06:23 +0100
 
