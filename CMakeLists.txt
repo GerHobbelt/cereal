@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 3.6...3.15)
 
-project(cereal LANGUAGES CXX VERSION 1.3.2)
-
-if(PROJECT_SOURCE_DIR STREQUAL CMAKE_SOURCE_DIR)
-    set(CEREAL_MASTER_PROJECT ON)
+if (NOT (CMAKE_VERSION VERSION_LESS 3.14))
+  cmake_policy(VERSION 3.14)
 endif()
+
+project(cereal LANGUAGES CXX VERSION 1.3.2)
 
 option(SKIP_PORTABILITY_TEST "Skip portability (32 bit) tests" OFF)
 include(CheckCXXCompilerFlag)
@@ -78,7 +78,7 @@ find_package(rapidxml CONFIG REQUIRED)
 
 target_link_libraries(cereal INTERFACE rapidjson::rapidjson rapidxml::rapidxml)
 
-option(CEREAL_INSTALL "Generate the install target" ${CEREAL_MASTER_PROJECT})
+option(CEREAL_INSTALL "Generate the install target" ON)
 if(CEREAL_INSTALL)
     include(GNUInstallDirs)
     include(CMakePackageConfigHelpers)
@@ -123,7 +123,7 @@ if(NOT SKIP_PERFORMANCE_COMPARISON)
 endif()
 
 
-option(BUILD_TESTS "Build tests" ${CEREAL_MASTER_PROJECT})
+option(BUILD_TESTS "Build tests" ON)
 if(BUILD_TESTS)
     enable_testing()
     add_subdirectory(unittests)
