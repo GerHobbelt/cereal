@@ -1,4 +1,9 @@
 cmake_minimum_required (VERSION 2.6.2)
+
+if (NOT (CMAKE_VERSION VERSION_LESS 3.14))
+  cmake_policy(VERSION 3.14)
+endif()
+
 project (cereal)
 
 option(SKIP_PORTABILITY_TEST "Skip portability (32 bit) tests" OFF)
