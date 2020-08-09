@@ -603,6 +603,19 @@ namespace cereal
         ++itsIteratorStack.back();
       }
 
+      //! Resets the most recently started array or object as if it hasn't started yet
+      /*! Useful to implement backtracking during recursive decent for something like
+          std::variant<std::vector, std::map> without serializing std::variant::index */
+      void resetNode()
+      {
+          if (itsIteratorStack.size() > 1) {
+              const auto& penultimate = (itsIteratorStack.rbegin() + 1)->value();
+              if (penultimate.IsArray() || penultimate.IsObject()) {
+                  itsIteratorStack.pop_back();
+              }
+          }
+      }
+
       //! Retrieves the current node name
       /*! @return nullptr if no name exists */
       const char * getNodeName() const
