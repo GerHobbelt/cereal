@@ -3,7 +3,7 @@ Maintainer: Debian Med Packaging Team <debian-med-packaging@lists.alioth.debian.
 Uploaders: Michael R. Crusoe <crusoe@debian.org>
 Section: libdevel
 Priority: optional
-Build-Depends: debhelper-compat (= 12),
+Build-Depends: debhelper-compat (= 13),
                libboost-serialization-dev,
                libboost-test-dev,
                cmake,
