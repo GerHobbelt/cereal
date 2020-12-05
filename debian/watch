@@ -1,4 +1,4 @@
-version=3
+version=4
 # Uncomment to find new files on Github
 #  - when using releases:
 opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/libcereal-$1\.tar\.gz/ \
