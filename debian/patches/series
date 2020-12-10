@@ -1,3 +1,4 @@
 reproducible-doxygen
 drop-google-analytics
 add-only-tests-target
+use_debian_packaged_rapidjson.patch

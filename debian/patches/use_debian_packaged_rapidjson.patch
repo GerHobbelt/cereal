@@ -1,0 +1,22 @@
+Author: Andreas Tille <tille@debian.org>
+Last-Update: Sat, 05 Dec 2020 17:12:21 +0100
+Bug-Debian: https://bugs.debian.org/976585
+Description: Include Debian packaged rapidjson
+
+--- a/include/cereal/archives/json.hpp
++++ b/include/cereal/archives/json.hpp
+@@ -61,10 +61,10 @@ namespace cereal
+ #define CEREAL_RAPIDJSON_PARSE_DEFAULT_FLAGS kParseFullPrecisionFlag | kParseNanAndInfFlag
+ #endif
+ 
+-#include "cereal/external/rapidjson/prettywriter.h"
+-#include "cereal/external/rapidjson/ostreamwrapper.h"
+-#include "cereal/external/rapidjson/istreamwrapper.h"
+-#include "cereal/external/rapidjson/document.h"
++#include "rapidjson/prettywriter.h"
++#include "rapidjson/ostreamwrapper.h"
++#include "rapidjson/istreamwrapper.h"
++#include "rapidjson/document.h"
+ #include "cereal/external/base64.hpp"
+ 
+ #include <limits>
