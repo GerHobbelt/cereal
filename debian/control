@@ -18,7 +18,8 @@ Rules-Requires-Root: no
 Package: libcereal-dev
 Multi-Arch: foreign
 Architecture: all
-Depends: ${misc:Depends}
+Depends: ${misc:Depends},
+         rapidjson-dev
 Description: C++11 library for serialization
  cereal is a header-only C++11 serialization library. cereal takes arbitrary
  data types and reversibly turns them into different representations, such as
