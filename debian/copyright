@@ -1,6 +1,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: cereal
 Source: https://github.com/USCiLab/cereal
+Files-Excluded: include/cereal/external/rapidjson
 
 Files: *
 Copyright: (c) 2014, Randolph Voorhies, Shane Grant
@@ -32,10 +33,6 @@ License: other
 Files: include/cereal/external/rapidxml/*
 Copyright: Copyright (c) 2006, 2007, 2009 Marcin Kalicinski
 License: BSL-1.0 or Expat
-
-Files: include/cereal/external/rapidjson/*
-Copyright: (C) 2011 Milo Yip <miloyip@gmail.com>
-License: Expat
 
 Files: debian/*
 Copyright: © 2015 Michael R. Crusoe <crusoe@ucdavis.edu>

@@ -1,10 +1,4 @@
 version=4
-# Uncomment to find new files on Github
-#  - when using releases:
-opts=filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/libcereal-$1\.tar\.gz/ \
-https://github.com/USCiLab/cereal/releases .*/archive/v(\d[\d.-]+)\.(?:tar(?:\.gz|\.bz2)?|tgz)
-# Remark: frequently you can do s/#PREFIX#/v?/ since 'v' or nothing is quite common but there are other prefixes possible
 
-# if you need to repack and choose +dfsg prefix
-# opts=dversionmangle=s/[~\+]dfsg[0-9]*// \
-#
+opts="repacksuffix=+dfsg,dversionmangle=auto,repack,compression=xz,filenamemangle=s/.+\/v?(\d\S*)\.tar\.gz/libcereal-$1\.tar\.gz/" \
+  https://github.com/USCiLab/cereal/releases .*/archive/v(\d[\d.-]+)\.(?:tar(?:\.gz|\.bz2)?|tgz)

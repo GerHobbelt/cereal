@@ -6,6 +6,7 @@ Priority: optional
 Build-Depends: debhelper-compat (= 13),
                libboost-serialization-dev,
                libboost-test-dev,
+               rapidjson-dev,
                cmake,
                doxygen
 Standards-Version: 4.5.1
