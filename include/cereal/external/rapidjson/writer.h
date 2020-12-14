@@ -69,6 +69,10 @@ enum WriteFlag {
     kWriteDefaultFlags = CEREAL_RAPIDJSON_WRITE_DEFAULT_FLAGS  //!< Default write flags. Can be customized by defining CEREAL_RAPIDJSON_WRITE_DEFAULT_FLAGS
 };
 
+namespace internal {
+    static constexpr size_t kDefaultLevelDepth = 32;
+}
+
 //! JSON writer
 /*! Writer implements the concept Handler.
     It generates JSON text by events to an output os.
@@ -98,11 +102,11 @@ public:
         \param levelDepth Initial capacity of stack.
     */
     explicit
-    Writer(OutputStream& os, StackAllocator* stackAllocator = 0, size_t levelDepth = kDefaultLevelDepth) : 
+    Writer(OutputStream& os, StackAllocator* stackAllocator = 0, size_t levelDepth = internal::kDefaultLevelDepth) :
         os_(&os), level_stack_(stackAllocator, levelDepth * sizeof(Level)), maxDecimalPlaces_(kDefaultMaxDecimalPlaces), hasRoot_(false) {}
 
     explicit
-    Writer(StackAllocator* allocator = 0, size_t levelDepth = kDefaultLevelDepth) :
+    Writer(StackAllocator* allocator = 0, size_t levelDepth = internal::kDefaultLevelDepth) :
         os_(0), level_stack_(allocator, levelDepth * sizeof(Level)), maxDecimalPlaces_(kDefaultMaxDecimalPlaces), hasRoot_(false) {}
 
 #if CEREAL_RAPIDJSON_HAS_CXX11_RVALUE_REFS
@@ -290,7 +294,7 @@ protected:
         bool inArray;       //!< true if in array, otherwise in object
     };
 
-    static const size_t kDefaultLevelDepth = 32;
+    static const size_t kDefaultLevelDepth = internal::kDefaultLevelDepth;
 
     bool WriteNull()  {
         PutReserve(*os_, 4);
