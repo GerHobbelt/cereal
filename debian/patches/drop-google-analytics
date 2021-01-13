@@ -1,4 +1,6 @@
 Description: Drop google analytics
+Author: Michael R. Crusoe <crusoe@debian.org>
+Forwarded: not-needed
 --- libcereal.orig/doc/footer.html
 +++ libcereal/doc/footer.html
 @@ -17,15 +17,5 @@

@@ -1,5 +1,6 @@
 libcereal (1.3.0+dfsg-1) UNRELEASED; urgency=medium
 
+  [ Andreas Tille ]
   * Team upload.
   * Standards-Version: 4.5.1 (routine-update)
   * debhelper-compat 13 (routine-update)
@@ -9,6 +10,10 @@ libcereal (1.3.0+dfsg-1) UNRELEASED; urgency=medium
   * install from debian/tmp to enable dh_missing --fail-missing
   * install cmake file
   * Remove code copy of rapidjson and use Debian packaged code instead
+
+  [ Michael R. Crusoe ]
+  * debian/patches/{reproducible-doxygen,drop-google-analytics}:
+    doesn't need forwarding upstream.
 
  -- Andreas Tille <tille@debian.org>  Sat, 05 Dec 2020 17:12:21 +0100
 

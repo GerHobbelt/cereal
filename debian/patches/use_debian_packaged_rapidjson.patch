@@ -2,7 +2,7 @@ Author: Andreas Tille <tille@debian.org>
 Last-Update: Sat, 05 Dec 2020 17:12:21 +0100
 Bug-Debian: https://bugs.debian.org/976585
 Description: Include Debian packaged rapidjson
-
+Forwarded: not-needed
 --- a/include/cereal/archives/json.hpp
 +++ b/include/cereal/archives/json.hpp
 @@ -41,30 +41,30 @@ namespace cereal
