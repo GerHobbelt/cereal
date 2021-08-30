@@ -312,7 +312,13 @@ struct OOJson
 };
 
 // ######################################################################
-int main()
+
+
+#if defined(BUILD_MONOLITHIC)
+#define main(c, a)			cereal_example_sandbox_json_main(c, a)
+#endif
+
+int main(int argc, const char** argv)
 {
   std::cout << std::boolalpha << std::endl;
 

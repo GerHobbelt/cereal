@@ -196,7 +196,13 @@ CEREAL_REGISTER_TYPE(BBB)
 
 template <class T> void nop(T&&) {}
 
-int main()
+
+
+#if defined(BUILD_MONOLITHIC)
+#define main(c, a)			cereal_example_sandbox_rtti_main(c, a)
+#endif
+
+int main(int argc, const char** argv)
 {
   {
     std::ofstream ostream("rtti.txt");

@@ -141,7 +141,13 @@ struct Another
   }
 };
 
-int main( int, char ** argv )
+
+
+#if defined(BUILD_MONOLITHIC)
+#define main(c, a)			cereal_test_portability_main(c, a)
+#endif
+
+int main(int argc, const char** argv)
 {
   std::vector<Another> vec_o;
   for( int i = 0; i < 5; ++i )

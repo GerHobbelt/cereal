@@ -338,7 +338,13 @@ struct PoDChildBoost : virtual PoDStructBoost
   }
 };
 
-int main()
+
+
+#if defined(BUILD_MONOLITHIC)
+#define main(c, a)			cereal_sandbox_performance_main(c, a)
+#endif
+
+int main(int argc, const char** argv)
 {
   std::random_device rd;
   std::mt19937 gen(rd());
