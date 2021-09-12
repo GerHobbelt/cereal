@@ -192,7 +192,7 @@ namespace cereal
         if (itsNodeStack.top() == NodeType::InObject)
           itsPrettyPrint ? itsPrettyWriter.EndObject() : itsPlainWriter.EndObject();
         else if (itsNodeStack.top() == NodeType::InArray)
-          itsPrettyPrint ? itsPrettyWriter.EndArray() : itsPrettyWriter.EndObject();
+          itsPrettyPrint ? itsPrettyWriter.EndArray() : itsPlainWriter.EndArray();
 
         if (itsPrettyPrint)
           itsPrettyWriter.~JSONWriter();
