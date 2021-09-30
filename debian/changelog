@@ -2,6 +2,7 @@ libcereal (1.3.0+dfsg-2) UNRELEASED; urgency=medium
 
   * Team upload.
   * Fix watch file
+  * Standards-Version: 4.6.0 (routine-update)
 
  -- Andreas Tille <tille@debian.org>  Thu, 30 Sep 2021 11:38:09 +0200
 
