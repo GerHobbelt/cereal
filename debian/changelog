@@ -2,6 +2,7 @@ libcereal (1.3.1+dfsg-1) UNRELEASED; urgency=medium
 
   * New upstream version
   * Refresh patches. Sent add-only-tests-target upstream.
+  * Adjust to changes in cmake locations
 
  -- Michael R. Crusoe <crusoe@debian.org>  Mon, 17 Jan 2022 09:10:47 +0100
 
