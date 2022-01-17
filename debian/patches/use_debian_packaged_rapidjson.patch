@@ -3,9 +3,9 @@ Last-Update: Sat, 05 Dec 2020 17:12:21 +0100
 Bug-Debian: https://bugs.debian.org/976585
 Description: Include Debian packaged rapidjson
 Forwarded: not-needed
---- a/include/cereal/archives/json.hpp
-+++ b/include/cereal/archives/json.hpp
-@@ -41,30 +41,30 @@ namespace cereal
+--- libcereal.orig/include/cereal/archives/json.hpp
++++ libcereal/include/cereal/archives/json.hpp
+@@ -41,30 +41,30 @@
  }
  
  // Inform rapidjson that assert will throw
@@ -49,7 +49,7 @@ Forwarded: not-needed
  #include "cereal/external/base64.hpp"
  
  #include <limits>
-@@ -107,8 +107,8 @@ namespace cereal
+@@ -107,8 +107,8 @@
    {
      enum class NodeType { StartObject, InObject, StartArray, InArray };
  
@@ -60,7 +60,7 @@ Forwarded: not-needed
  
      public:
        /*! @name Common Functionality
-@@ -255,7 +255,7 @@ namespace cereal
+@@ -255,7 +255,7 @@
        //! Saves a double to the current node
        void saveValue(double d)              { itsWriter.Double(d);                                                       }
        //! Saves a string to the current node
@@ -69,7 +69,7 @@ Forwarded: not-needed
        //! Saves a const char * to the current node
        void saveValue(char const * s)        { itsWriter.String(s);                                                       }
        //! Saves a nullptr to the current node
-@@ -419,11 +419,11 @@ namespace cereal
+@@ -419,11 +419,11 @@
    class JSONInputArchive : public InputArchive<JSONInputArchive>, public traits::TextArchive
    {
      private:
@@ -84,7 +84,7 @@ Forwarded: not-needed
  
      public:
        /*! @name Common Functionality
-@@ -652,7 +652,7 @@ namespace cereal
+@@ -657,7 +657,7 @@
        //! Loads a value from the current node - string overload
        void loadValue(std::string & val) { search(); val = itsIteratorStack.back().value().GetString(); ++itsIteratorStack.back(); }
        //! Loads a nullptr from the current node
@@ -93,7 +93,7 @@ Forwarded: not-needed
  
        // Special cases to handle various flavors of long, which tend to conflict with
        // the int32_t or int64_t on various compiler/OS combinations.  MSVC doesn't need any of this.
-@@ -732,7 +732,7 @@ namespace cereal
+@@ -737,7 +737,7 @@
        const char * itsNextName;               //!< Next name set by NVP
        ReadStream itsReadStream;               //!< Rapidjson write stream
        std::vector<Iterator> itsIteratorStack; //!< 'Stack' of rapidJSON iterators

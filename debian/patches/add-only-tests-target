@@ -1,22 +1,24 @@
-Author: Michael R. Crusoe <crusoe@ucdavis.edu>
-Description: build just the tests, as an option for autopkgtest later
-With assistance from Kevin D. Murray; thanks!
+From: Michael R. Crusoe <crusoe@debian.org>
+Subject: build just the tests, as an option for Debian autopkgtests later
+Forwarded: https://github.com/USCiLab/cereal/pull/739
+
+With assistance from @kdmurray91; thanks!
+
 --- libcereal.orig/CMakeLists.txt
 +++ libcereal/CMakeLists.txt
-@@ -46,6 +46,8 @@
+@@ -13,6 +13,8 @@
  
- endif()
+ option(SKIP_PERFORMANCE_COMPARISON "Skip building performance comparison (requires boost)" OFF)
  
 +option(ONLY_TESTS "Don't build docs, or sandbox" OFF)
 +
- if(NOT CMAKE_VERSION VERSION_LESS 3.0)
-     add_library(cereal INTERFACE)
-     target_include_directories(cereal INTERFACE
-@@ -78,7 +80,8 @@
-   
- enable_testing()
- add_subdirectory(unittests)
--
+ # TODO: should not be needed! CK
+ if(NOT CMAKE_VERSION VERSION_LESS 3.0) # installing cereal requires INTERFACE lib
+     option(JUST_INSTALL_CEREAL "Don't do anything besides installing the library" OFF)
+@@ -116,6 +118,8 @@
+     add_subdirectory(unittests)
+ endif()
+ 
 -add_subdirectory(sandbox)
 +if(NOT ONLY_TEST)
 +	add_subdirectory(sandbox)
