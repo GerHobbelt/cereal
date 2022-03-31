@@ -1,5 +1,6 @@
 cmake_minimum_required (VERSION 2.6.2)
 project (cereal)
+# TEST COMMIT AFTER ntpro_v1.3.0_tag
 
 option(SKIP_PORTABILITY_TEST "Skip portability (32 bit) tests" OFF)
 option(SKIP_PERFORMANCE_COMPARISON "Skip building performance comparison (requires boost)" OFF)
