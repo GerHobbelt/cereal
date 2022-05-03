@@ -11,5 +11,5 @@ cd $AUTOPKGTEST_TMP
 
 cp -rs /usr/share/doc/${pkg}/tests/* .
 for file in `find . -name "*.gz"`; do gunzip < ${file} > ${file%%.gz}; done
-cmake -DONLY_TEST=on -DSKIP_PORTABILITY_TEST=on .
+cmake -DONLY_TEST=on -DSKIP_PORTABILITY_TEST=on -DBUILD_SANDBOX=True .
 make
