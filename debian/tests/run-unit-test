@@ -1,6 +1,7 @@
 #!/bin/sh
 
 pkg=libcereal-dev
+CUR_DIR=`pwd`
 
 if [ "$AUTOPKGTEST_TMP" = "" ] ; then
   AUTOPKGTEST_TMP=`mktemp -d /tmp/${pkg}-test.XXXXXX`
@@ -9,7 +10,10 @@ fi
 
 cd $AUTOPKGTEST_TMP
 
+# Copy relevant files
+cp -a $CUR_DIR/sandbox .
 cp -rs /usr/share/doc/${pkg}/tests/* .
+
 for file in `find . -name "*.gz"`; do gunzip < ${file} > ${file%%.gz}; done
 cmake -DONLY_TEST=on -DSKIP_PORTABILITY_TEST=on -DBUILD_SANDBOX=True .
 make
