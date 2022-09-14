@@ -108,7 +108,8 @@ namespace cereal
     enum class NodeType { StartObject, InObject, StartArray, InArray };
 
     using WriteStream = CEREAL_RAPIDJSON_NAMESPACE::OStreamWrapper;
-    using JSONWriter = CEREAL_RAPIDJSON_NAMESPACE::PrettyWriter<WriteStream>;
+    // serialize without new lines
+    using JSONWriter = CEREAL_RAPIDJSON_NAMESPACE::Writer<WriteStream>;
 
     public:
       /*! @name Common Functionality
@@ -164,7 +165,7 @@ namespace cereal
         itsNextName(nullptr)
       {
         itsWriter.SetMaxDecimalPlaces( options.itsPrecision );
-        itsWriter.SetIndent( options.itsIndentChar, options.itsIndentLength );
+        // itsWriter.SetIndent( options.itsIndentChar, options.itsIndentLength );
         itsNameCounter.push(0);
         itsNodeStack.push(NodeType::StartObject);
       }
@@ -619,6 +620,11 @@ namespace cereal
       void setNextName( const char * name )
       {
         itsNextName = name;
+      }
+
+      const char* getNextName()
+      {
+        return itsNextName;
       }
 
       //! Loads a value from the current node - small signed overload

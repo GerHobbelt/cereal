@@ -403,7 +403,8 @@ CEREAL_RAPIDJSON_NAMESPACE_END
 */
 #ifndef CEREAL_RAPIDJSON_ASSERT
 #include <cassert>
-#define CEREAL_RAPIDJSON_ASSERT(x) assert(x)
+#define CEREAL_RAPIDJSON_ASSERT(x) if(!(x)){ \
+    throw ::std::runtime_error("rapidjson internal assertion failure: " #x); }
 #endif // CEREAL_RAPIDJSON_ASSERT
 
 ///////////////////////////////////////////////////////////////////////////////
