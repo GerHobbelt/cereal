@@ -5,6 +5,7 @@ libcereal (1.3.2+dfsg-3) UNRELEASED; urgency=medium
   * libcereal-dev Architecture: any since the cmake files are not
     Architecture independent
     Closes: #1020779
+  * Standards-Version: 4.6.1 (routine-update)
 
  -- Andreas Tille <tille@debian.org>  Thu, 06 Oct 2022 09:17:58 +0200
 
