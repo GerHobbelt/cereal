@@ -1,0 +1,2 @@
+# False positive
+libcereal source: source-is-missing [include/cereal/external/rapidxml/manual.html]
