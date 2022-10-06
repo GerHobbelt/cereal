@@ -16,8 +16,7 @@ Homepage: https://uscilab.github.io/cereal/
 Rules-Requires-Root: no
 
 Package: libcereal-dev
-Multi-Arch: foreign
-Architecture: all
+Architecture: any
 Depends: ${misc:Depends},
          rapidjson-dev
 Description: C++11 library for serialization

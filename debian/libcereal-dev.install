@@ -2,4 +2,4 @@ usr/include
 CMakeLists.txt usr/share/doc/libcereal-dev/tests/
 Config.cmake.in usr/share/doc/libcereal-dev/tests/
 unittests usr/share/doc/libcereal-dev/tests/
-usr/lib/*/cmake/cereal usr/share/cmake/
+usr/lib/*/cmake/cereal
