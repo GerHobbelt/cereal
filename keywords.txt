@@ -1,0 +1,27 @@
+#######################################
+# Syntax Coloring Map For 
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+Archive KEYWORD1
+BinaryOutputArchive KEYWORD1
+BinaryInputArchive KEYWORD1
+JSONOutputArchive KEYWORD1
+JSONInputArchive KEYWORD1
+XMLInputArchive KEYWORD1
+XMLOutputArchive KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+save KEYWORD2
+load KEYWORD2
+serialize KEYWORD2
+
+#######################################
+# Constants (LITERAL1)
+#######################################
