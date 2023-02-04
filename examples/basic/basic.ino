@@ -7,6 +7,10 @@
 #include <iostream>
 #include <vector>
 
+#ifdef NRF52_SERIES
+    #include <Adafruit_TinyUSB.h> // for Serial on nRF52 boards
+#endif
+
 class SubData
 {
     public:
@@ -108,3 +112,5 @@ void setup()
     Serial.print("sub.d: ");
     Serial.println(d2.sub.d.c_str());
 }
+
+void loop(){}
