@@ -749,7 +749,7 @@ namespace cereal
                                                                                                                           \
         static_assert( valid || !value, "cereal detected different or invalid types in corresponding member "             \
             #load_test_name " and " #save_test_name " functions. \n "                                                     \
-            "the paramater to " #load_test_name " must be a constant reference to the type that "                         \
+            "the parameter to " #load_test_name " must be a constant reference to the type that "                         \
             #save_test_name " returns." );                                                                                \
       };                                                                                                                  \
     } /* end namespace detail */
@@ -858,7 +858,7 @@ namespace cereal
                                                                                                                              \
         static_assert( check::valid || !check::exists, "cereal detected different types in corresponding non-member "        \
             #test_name " and " #save_name " functions. \n "                                                                  \
-            "the paramater to " #test_name " must be a constant reference to the type that " #save_name " returns." );       \
+            "the parameter to " #test_name " must be a constant reference to the type that " #save_name " returns." );       \
       };                                                                                                                     \
     } /* namespace detail */                                                                                                 \
                                                                                                                              \
