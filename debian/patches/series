@@ -1,2 +1,3 @@
 drop-google-analytics
 use_debian_packaged_rapidjson.patch
+allow_unsigned_char.patch

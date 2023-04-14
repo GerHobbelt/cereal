@@ -1,0 +1,57 @@
+Author: "Aaron M. Ucko" <ucko@debian.org>
+Last-Update: Fri, 14 Apr 2023 09:37:59 -0400
+Bug-Debian: https://bugs.debian.org/1034369
+Description: Fix autopkgtest regression on non x86: cc1plus: all warnings being treated as errors
+
+Index: b/unittests/map.hpp
+===================================================================
+--- a/unittests/map.hpp
++++ b/unittests/map.hpp
+@@ -62,7 +62,7 @@ void test_map()
+ 
+     std::map<int8_t, StructExternalSplit> o_esplmap;
+     for(int j=0; j<100; ++j)
+-      o_esplmap.insert({random_value<char>(gen),  { random_value<int>(gen), random_value<int>(gen) }});
++      o_esplmap.insert({random_value<int8_t>(gen),  { random_value<int>(gen), random_value<int>(gen) }});
+ 
+     std::ostringstream os;
+     {
+Index: b/unittests/multimap.hpp
+===================================================================
+--- a/unittests/multimap.hpp
++++ b/unittests/multimap.hpp
+@@ -71,7 +71,7 @@ void test_multimap()
+     std::multimap<int8_t, StructExternalSplit> o_esplmultimap;
+     for(int j=0; j<100; ++j)
+     {
+-      auto key = random_value<char>(gen);
++      auto key = random_value<int8_t>(gen);
+       o_esplmultimap.insert({key,  { random_value<int>(gen), random_value<int>(gen) }});
+       o_esplmultimap.insert({key,  { random_value<int>(gen), random_value<int>(gen) }});
+     }
+Index: b/unittests/unordered_map.hpp
+===================================================================
+--- a/unittests/unordered_map.hpp
++++ b/unittests/unordered_map.hpp
+@@ -54,7 +54,7 @@ void test_unordered_map()
+ 
+     std::unordered_map<int8_t, StructExternalSplit> o_esplunordered_map;
+     for(int j=0; j<100; ++j)
+-      o_esplunordered_map.insert({random_value<char>(gen),  { random_value<int>(gen), random_value<int>(gen) }});
++      o_esplunordered_map.insert({random_value<int8_t>(gen),  { random_value<int>(gen), random_value<int>(gen) }});
+ 
+     std::ostringstream os;
+     {
+Index: b/unittests/unordered_multimap.hpp
+===================================================================
+--- a/unittests/unordered_multimap.hpp
++++ b/unittests/unordered_multimap.hpp
+@@ -71,7 +71,7 @@ void test_unordered_multimap()
+     std::unordered_multimap<int8_t, StructExternalSplit> o_esplunordered_multimap;
+     for(int j=0; j<100; ++j)
+     {
+-      auto key = random_value<char>(gen);
++      auto key = random_value<int8_t>(gen);
+       o_esplunordered_multimap.insert({key,  { random_value<int>(gen), random_value<int>(gen) }});
+       o_esplunordered_multimap.insert({key,  { random_value<int>(gen), random_value<int>(gen) }});
+     }
