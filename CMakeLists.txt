@@ -73,23 +73,28 @@ if(NOT CMAKE_VERSION VERSION_LESS 3.8)
     target_compile_features(cereal INTERFACE cxx_std_11)
 endif()
 
+find_package(rapidjson CONFIG REQUIRED)
+find_package(rapidxml CONFIG REQUIRED)
+
+target_link_libraries(cereal INTERFACE rapidjson::rapidjson rapidxml::rapidxml)
 
 option(CEREAL_INSTALL "Generate the install target" ${CEREAL_MASTER_PROJECT})
 if(CEREAL_INSTALL)
     include(GNUInstallDirs)
     include(CMakePackageConfigHelpers)
 
-    install(TARGETS cereal EXPORT ${PROJECT_NAME}Targets)
+    set(CEREAL_INSTALL_INC_DIR "${CMAKE_INSTALL_PREFIX}/include")
+    install(TARGETS ${PROJECT_NAME} EXPORT ${PROJECT_NAME}Targets)
     install(DIRECTORY include/cereal DESTINATION ${CMAKE_INSTALL_INCLUDEDIR})
 
     set(configFile ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake)
     set(versionFile ${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}ConfigVersion.cmake)
-    set(configInstallDestination ${CMAKE_INSTALL_LIBDIR}/cmake/${PROJECT_NAME})
 
     configure_package_config_file(
         ${CMAKE_CURRENT_SOURCE_DIR}/Config.cmake.in
         ${configFile}
         INSTALL_DESTINATION ${configInstallDestination}
+        PATH_VARS CEREAL_INSTALL_INC_DIR
     )
     if(${CMAKE_VERSION} VERSION_GREATER 3.13)
         write_basic_package_version_file("${versionFile}" COMPATIBILITY SameMajorVersion ARCH_INDEPENDENT)
