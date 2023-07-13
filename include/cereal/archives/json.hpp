@@ -566,6 +566,23 @@ namespace cereal
             throw Exception("JSON Parsing failed - provided NVP (" + std::string(searchName) + ") not found");
           }
 
+          inline bool search_no_throw(const char* searchName)
+          {
+              const auto len = std::strlen(searchName);
+              size_t index = 0;
+              for (auto it = itsMemberItBegin; it != itsMemberItEnd; ++it, ++index)
+              {
+                  const auto currentName = it->name.GetString();
+                  if ((std::strncmp(searchName, currentName, len) == 0) &&
+                      (std::strlen(currentName) == len))
+                  {
+                      return true;
+                  }
+              }
+
+              return false;
+          }
+
         private:
           MemberIterator itsMemberItBegin, itsMemberItEnd; //!< The member iterator (object)
           ValueIterator itsValueItBegin;                   //!< The value iterator (array)
@@ -601,6 +618,29 @@ namespace cereal
       }
 
     public:
+
+        // Search if a given name exist on the current iterator stack, without throwing if false
+        inline bool has_name(const char* name)
+        {
+            if (name)
+            {
+                // The actual name of the current node
+                auto const actualName = itsIteratorStack.back().name();
+
+                // Is the next name?
+                if (actualName && std::strcmp(name, actualName) == 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    return itsIteratorStack.back().search_no_throw(name);
+                }
+            }
+
+            return false;
+        }
+
       //! Starts a new node, going into its proper iterator
       /*! This places an iterator for the next node to be parsed onto the iterator stack.  If the next
           node is an array, this will be a value iterator, otherwise it will be a member iterator.

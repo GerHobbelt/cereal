@@ -85,7 +85,7 @@ namespace cereal
     //! Used as the default value for EnableIf and DisableIf template parameters
     /*! @relates EnableIf
         @relates DisableIf */
-    static const detail::sfinae sfinae = {};
+    inline static const detail::sfinae sfinae = {};
 
     // ######################################################################
     //! Provides a way to enable a function if conditions are met
