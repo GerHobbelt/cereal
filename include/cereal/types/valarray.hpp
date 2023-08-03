@@ -56,7 +56,7 @@ namespace cereal
     size_type valarraySize;
     ar( make_size_tag( valarraySize ) );
 
-    valarray.resize( static_cast<std::size_t>( valarraySize ) );
+    access::resize(valarray, static_cast<std::size_t>( valarraySize ) );
     ar( binary_data( &valarray[0], static_cast<std::size_t>( valarraySize ) * sizeof(T) ) );
   }
 
@@ -80,7 +80,7 @@ namespace cereal
     size_type valarraySize;
     ar( make_size_tag( valarraySize ) );
 
-    valarray.resize( static_cast<size_t>( valarraySize ) );
+    access::resize(valarray, static_cast<size_t>( valarraySize ) );
     for(auto && v : valarray)
       ar(v);
   }

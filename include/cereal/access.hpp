@@ -317,6 +317,24 @@ namespace cereal
         return new T();
       }
 
+      template <typename T, typename = void>
+      struct has_default_constructor : std::false_type {};
+
+      template <typename T>
+      struct has_default_constructor<T, std::void_t<decltype(T())>> : std::true_type {};
+
+      // To be able to resize an STL container with types without public default constructor,
+      // e.g. with private default constructor having friend access to cereal::access
+      template <typename T> inline
+      static void resize(T& container, typename T::size_type size) {
+        using value_type = typename T::value_type;
+        if constexpr (has_default_constructor<value_type>::value) {
+          container.resize(size, value_type());
+        } else {
+          container.resize(size);
+        }
+      }
+
       template <class T> inline
       static std::false_type load_and_construct(...)
       { return std::false_type(); }

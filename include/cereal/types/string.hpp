@@ -52,7 +52,7 @@ namespace cereal
   {
     size_type size;
     ar( make_size_tag( size ) );
-    str.resize(static_cast<std::size_t>(size));
+    access::resize(str, static_cast<std::size_t>(size));
     ar( binary_data( const_cast<CharT *>( str.data() ), static_cast<std::size_t>(size) * sizeof(CharT) ) );
   }
 } // namespace cereal
