@@ -217,7 +217,7 @@ public:
 
         // Simply expand it if it is the last allocation and there is sufficient space
         if (originalPtr == reinterpret_cast<char *>(chunkHead_) + CEREAL_RAPIDJSON_ALIGN(sizeof(ChunkHeader)) + chunkHead_->size - originalSize) {
-            size_t increment = static_cast<size_t>(newSize - originalSize);
+            size_t increment = newSize - originalSize;
             if (chunkHead_->size + increment <= chunkHead_->capacity) {
                 chunkHead_->size += increment;
                 return originalPtr;

@@ -492,14 +492,14 @@ namespace cereal
           Iterator() : itsIndex( 0 ), itsType(Null_) {}
 
           Iterator(MemberIterator begin, MemberIterator end) :
-            itsMemberItBegin(begin), itsMemberItEnd(end), itsIndex(0), itsSize(std::distance(begin, end)), itsType(Member)
+            itsMemberItBegin(begin), itsMemberItEnd(end), itsIndex(0), itsSize(static_cast<size_t>(std::distance(begin, end))), itsType(Member)
           {
             if( itsSize == 0 )
               itsType = Null_;
           }
 
           Iterator(ValueIterator begin, ValueIterator end) :
-            itsValueItBegin(begin), itsIndex(0), itsSize(std::distance(begin, end)), itsType(Value)
+            itsValueItBegin(begin), itsIndex(0), itsSize(static_cast<size_t>(std::distance(begin, end))), itsType(Value)
           {
             if( itsSize == 0 )
               itsType = Null_;
@@ -520,8 +520,8 @@ namespace cereal
 
             switch(itsType)
             {
-              case Value : return itsValueItBegin[itsIndex];
-              case Member: return itsMemberItBegin[itsIndex].value;
+              case Value : return itsValueItBegin[static_cast<long>(itsIndex)];
+              case Member: return itsMemberItBegin[static_cast<long>(itsIndex)].value;
               default: throw cereal::Exception("JSONInputArchive internal error: null or empty iterator to object or array!");
             }
           }
@@ -529,8 +529,8 @@ namespace cereal
           //! Get the name of the current node, or nullptr if it has no name
           const char * name() const
           {
-            if( itsType == Member && (itsMemberItBegin + itsIndex) != itsMemberItEnd )
-              return itsMemberItBegin[itsIndex].name.GetString();
+            if( itsType == Member && (itsMemberItBegin + static_cast<long>(itsIndex)) != itsMemberItEnd )
+              return itsMemberItBegin[static_cast<long>(itsIndex)].name.GetString();
             else
               return nullptr;
           }

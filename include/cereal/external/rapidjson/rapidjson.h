@@ -312,8 +312,8 @@
 #if CEREAL_RAPIDJSON_64BIT != 1
 #error CEREAL_RAPIDJSON_48BITPOINTER_OPTIMIZATION can only be set to 1 when CEREAL_RAPIDJSON_64BIT=1
 #endif
-#define CEREAL_RAPIDJSON_SETPOINTER(type, p, x) (p = reinterpret_cast<type *>((reinterpret_cast<uintptr_t>(p) & static_cast<uintptr_t>(CEREAL_RAPIDJSON_UINT64_C2(0xFFFF0000, 0x00000000))) | reinterpret_cast<uintptr_t>(reinterpret_cast<const void*>(x))))
-#define CEREAL_RAPIDJSON_GETPOINTER(type, p) (reinterpret_cast<type *>(reinterpret_cast<uintptr_t>(p) & static_cast<uintptr_t>(CEREAL_RAPIDJSON_UINT64_C2(0x0000FFFF, 0xFFFFFFFF))))
+#define CEREAL_RAPIDJSON_SETPOINTER(type, p, x) (p = reinterpret_cast<type *>((reinterpret_cast<uintptr_t>(p) & CEREAL_RAPIDJSON_UINT64_C2(0xFFFF0000, 0x00000000)) | reinterpret_cast<uintptr_t>(reinterpret_cast<const void*>(x))))
+#define CEREAL_RAPIDJSON_GETPOINTER(type, p) (reinterpret_cast<type *>(reinterpret_cast<uintptr_t>(p) & CEREAL_RAPIDJSON_UINT64_C2(0x0000FFFF, 0xFFFFFFFF)))
 #else
 #define CEREAL_RAPIDJSON_SETPOINTER(type, p, x) (p = (x))
 #define CEREAL_RAPIDJSON_GETPOINTER(type, p) (p)
