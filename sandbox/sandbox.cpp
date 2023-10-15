@@ -720,7 +720,7 @@ int main(int argc, const char** argv)
     std::ifstream ss("xml_ordering.out");
     cereal::XMLInputArchive ar(ss);
 
-    // Output prodered out of order, try to load in order 1 2 3 4
+    // Output out of order, try to load in order 1 2 3 4
     double one;
     double two;
     double three;
