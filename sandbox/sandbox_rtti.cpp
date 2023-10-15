@@ -244,4 +244,6 @@ int main(int argc, const char** argv)
     iarchive(ptr4);
     iarchive(ptr5);
   }
+
+  return 0;
 }
