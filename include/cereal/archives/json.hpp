@@ -447,6 +447,7 @@ namespace cereal
         itsReadStream(stream)
       {
         itsDocument.ParseStream<>(itsReadStream);
+	CEREAL_RAPIDJSON_ASSERT(itsDocument.IsObject() || itsDocument.IsArray());
         if (itsDocument.IsArray())
           itsIteratorStack.emplace_back(itsDocument.Begin(), itsDocument.End());
         else
