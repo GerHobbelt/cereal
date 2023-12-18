@@ -637,8 +637,8 @@ namespace cereal
       void loadValue(T & val)
       {
         search();
-
-        val = static_cast<T>( itsIteratorStack.back().value().GetInt() );
+        if(itsIteratorStack.back().value().IsInt())
+            val = static_cast<T>( itsIteratorStack.back().value().GetInt() );
         ++itsIteratorStack.back();
       }
 
@@ -649,8 +649,8 @@ namespace cereal
       void loadValue(T & val)
       {
         search();
-
-        val = static_cast<T>( itsIteratorStack.back().value().GetUint() );
+        if(itsIteratorStack.back().value().IsUint())
+            val = static_cast<T>( itsIteratorStack.back().value().GetUint() );
         ++itsIteratorStack.back();
       }
 
