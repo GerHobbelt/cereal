@@ -62,6 +62,7 @@ namespace cereal
 #endif
 
 #include "cereal/external/rapidjson/prettywriter.h"
+#include "cereal/external/rapidjson/writer.h"
 #include "cereal/external/rapidjson/ostreamwrapper.h"
 #include "cereal/external/rapidjson/istreamwrapper.h"
 #include "cereal/external/rapidjson/document.h"
@@ -164,7 +165,7 @@ namespace cereal
         itsNextName(nullptr)
       {
         itsWriter.SetMaxDecimalPlaces( options.itsPrecision );
-        itsWriter.SetIndent( options.itsIndentChar, options.itsIndentLength );
+        // itsWriter.SetIndent( options.itsIndentChar, options.itsIndentLength );
         itsNameCounter.push(0);
         itsNodeStack.push(NodeType::StartObject);
       }
