@@ -669,7 +669,7 @@ namespace cereal
         if(itsIteratorStack.back().value().IsDouble()) 
           val = static_cast<float>(itsIteratorStack.back().value().GetDouble()); 
         if(itsIteratorStack.back().value().IsInt()) 
-          val = static_cast<float>(itsIteratorStack.back().value().IsInt());
+          val = static_cast<float>(itsIteratorStack.back().value().GetInt());
         ++itsIteratorStack.back(); 
       }
       //! Loads a value from the current node - double overload
@@ -679,7 +679,7 @@ namespace cereal
         if(itsIteratorStack.back().value().IsDouble()) 
           val = itsIteratorStack.back().value().GetDouble();
         if(itsIteratorStack.back().value().IsInt()) 
-          val = static_cast<float>(itsIteratorStack.back().value().IsInt());
+          val = static_cast<float>(itsIteratorStack.back().value().GetInt());
         ++itsIteratorStack.back(); 
       }
       //! Loads a value from the current node - string overload
