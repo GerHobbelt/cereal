@@ -660,11 +660,28 @@ namespace cereal
       //! Loads a value from the current node - int64 overload
       void loadValue(int64_t & val)     { search(); if(itsIteratorStack.back().value().IsInt64()) val = itsIteratorStack.back().value().GetInt64(); ++itsIteratorStack.back(); }
       //! Loads a value from the current node - uint64 overload
-      void loadValue(uint64_t & val)    { search(); if(itsIteratorStack.back().value().IsUint64()) val = itsIteratorStack.back().value().GetUint64(); ++itsIteratorStack.back(); }
+      void loadValue(uint64_t & val)    
+      { search(); if(itsIteratorStack.back().value().IsUint64()) val = itsIteratorStack.back().value().GetUint64(); ++itsIteratorStack.back(); }
       //! Loads a value from the current node - float overload
-      void loadValue(float & val)       { search(); if(itsIteratorStack.back().value().IsDouble()) val = static_cast<float>(itsIteratorStack.back().value().GetDouble()); ++itsIteratorStack.back(); }
+      void loadValue(float & val)       
+      { 
+        search(); 
+        if(itsIteratorStack.back().value().IsDouble()) 
+          val = static_cast<float>(itsIteratorStack.back().value().GetDouble()); 
+        if(itsIteratorStack.back().value().IsInt()) 
+          val = static_cast<float>(itsIteratorStack.back().value().IsInt());
+        ++itsIteratorStack.back(); 
+      }
       //! Loads a value from the current node - double overload
-      void loadValue(double & val)      { search(); if(itsIteratorStack.back().value().IsDouble()) val = itsIteratorStack.back().value().GetDouble(); ++itsIteratorStack.back(); }
+      void loadValue(double & val)      
+      { 
+        search(); 
+        if(itsIteratorStack.back().value().IsDouble()) 
+          val = itsIteratorStack.back().value().GetDouble();
+        if(itsIteratorStack.back().value().IsInt()) 
+          val = static_cast<float>(itsIteratorStack.back().value().IsInt());
+        ++itsIteratorStack.back(); 
+      }
       //! Loads a value from the current node - string overload
       void loadValue(std::string & val) { search(); if(itsIteratorStack.back().value().IsString()) val = itsIteratorStack.back().value().GetString(); ++itsIteratorStack.back(); }
       //! Loads a nullptr from the current node
