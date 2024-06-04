@@ -109,7 +109,7 @@ namespace cereal
     enum class NodeType { StartObject, InObject, StartArray, InArray };
 
     using WriteStream = CEREAL_RAPIDJSON_NAMESPACE::OStreamWrapper;
-    using JSONWriter = CEREAL_RAPIDJSON_NAMESPACE::Writer<WriteStream>;
+    using JSONWriter = CEREAL_RAPIDJSON_NAMESPACE::PrettyWriter<WriteStream>;
 
     public:
       /*! @name Common Functionality
