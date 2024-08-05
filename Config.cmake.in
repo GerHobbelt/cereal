@@ -11,5 +11,7 @@ set(CEREAL_LIBRARIES cereal)
 check_required_components(@PROJECT_NAME@)
 
 include(CMakeFindDependencyMacro)
-find_dependency(rapidjson CONFIG)
-find_dependency(rapidxml CONFIG)
+find_dependency(RapidJSON CONFIG)
+# What a hack
+target_include_directories(cereal::cereal INTERFACE ${RAPIDJSON_CMAKE_DIR}/../${RAPIDJSON_INCLUDE_DIRS})
+find_package(RapidXML MODULE REQUIRED)

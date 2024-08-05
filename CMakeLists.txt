@@ -73,10 +73,12 @@ if(NOT CMAKE_VERSION VERSION_LESS 3.8)
     target_compile_features(cereal INTERFACE cxx_std_11)
 endif()
 
-find_package(rapidjson CONFIG REQUIRED)
-find_package(rapidxml CONFIG REQUIRED)
+find_package(RapidJSON CONFIG REQUIRED)
+find_package(RapidXML MODULE REQUIRED)
 
-target_link_libraries(cereal INTERFACE rapidjson::rapidjson rapidxml::rapidxml)
+# Don't use target_include_directories as it'll hardcode the path, otherwise RapidJSON is nuts
+include_directories(cereal INTERFACE ${RAPIDJSON_CMAKE_DIR}/../${RAPIDJSON_INCLUDE_DIRS})
+target_link_libraries(cereal INTERFACE RapidXML::RapidXML)
 
 option(CEREAL_INSTALL "Generate the install target" ON)
 if(CEREAL_INSTALL)
